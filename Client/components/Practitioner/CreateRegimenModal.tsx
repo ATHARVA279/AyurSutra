@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { X, Plus, Trash2 } from 'lucide-react';
 
 interface RegimenStep {
   dayOffset: number;
@@ -75,7 +74,7 @@ const CreateRegimenModal: React.FC<CreateRegimenModalProps> = ({
               onClick={onClose}
               className="text-gray-400 hover:text-gray-600"
             >
-              <X className="h-5 w-5" />
+              <span className="text-xl">✖️</span>
             </button>
           </div>
         </div>
@@ -118,7 +117,7 @@ const CreateRegimenModal: React.FC<CreateRegimenModalProps> = ({
                 onClick={addStep}
                 className="inline-flex items-center px-3 py-1 border border-transparent text-sm font-medium rounded-md text-emerald-700 bg-emerald-100 hover:bg-emerald-200"
               >
-                <Plus className="h-4 w-4 mr-1" />
+                <span className="text-lg mr-1">➕</span>
                 Add Step
               </button>
             </div>
@@ -134,7 +133,7 @@ const CreateRegimenModal: React.FC<CreateRegimenModalProps> = ({
                         onClick={() => removeStep(index)}
                         className="text-red-600 hover:text-red-700"
                       >
-                        <Trash2 className="h-4 w-4" />
+                        <span className="text-lg">🗑️</span>
                       </button>
                     )}
                   </div>

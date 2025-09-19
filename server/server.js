@@ -22,7 +22,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.use(cors({
-  origin: true, // Allow all origins in development
+  origin: true, 
   credentials: true
 }));
 app.use(express.json());

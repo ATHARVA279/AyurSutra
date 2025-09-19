@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
-import { Activity, Eye, EyeOff } from 'lucide-react';
 
 const LoginForm: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -66,7 +65,7 @@ const LoginForm: React.FC = () => {
       <div className="max-w-md w-full space-y-8">
         <div>
           <div className="flex justify-center">
-            <Activity className="h-12 w-12 text-emerald-600" />
+            <span className="h-12 w-12 text-emerald-600 text-5xl">🏥</span>
           </div>
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
             AyurSutra
@@ -111,9 +110,9 @@ const LoginForm: React.FC = () => {
                 onClick={() => setShowPassword(!showPassword)}
               >
                 {showPassword ? (
-                  <EyeOff className="h-4 w-4 text-gray-400" />
+                  <span className="h-4 w-4 text-gray-400">🙈</span>
                 ) : (
-                  <Eye className="h-4 w-4 text-gray-400" />
+                  <span className="h-4 w-4 text-gray-400">👁️</span>
                 )}
               </button>
             </div>

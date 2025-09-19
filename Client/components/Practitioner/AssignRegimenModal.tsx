@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { X } from 'lucide-react';
 
 interface Patient {
   _id: string;
@@ -70,7 +69,7 @@ const AssignRegimenModal: React.FC<AssignRegimenModalProps> = ({
               onClick={onClose}
               className="text-gray-400 hover:text-gray-600"
             >
-              <X className="h-5 w-5" />
+              <span className="text-xl">✖️</span>
             </button>
           </div>
         </div>

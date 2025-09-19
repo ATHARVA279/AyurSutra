@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
-import { Users, Calendar, CheckCircle, TrendingUp, Plus } from 'lucide-react';
 import api from '../../utils/api';
 import { format, parseISO } from 'date-fns';
 import Navbar from '../Layout/Navbar';
@@ -126,7 +125,7 @@ const PractitionerDashboard: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-5 gap-6 mb-8">
             <div className="bg-white rounded-lg shadow p-6">
               <div className="flex items-center">
-                <Users className="h-8 w-8 text-blue-600" />
+                <span className="h-8 w-8 text-blue-600 text-2xl">👥</span>
                 <div className="ml-4">
                   <p className="text-sm font-medium text-gray-600">Total Patients</p>
                   <p className="text-2xl font-bold text-gray-900">{analytics.totalPatients}</p>
@@ -136,7 +135,7 @@ const PractitionerDashboard: React.FC = () => {
 
             <div className="bg-white rounded-lg shadow p-6">
               <div className="flex items-center">
-                <Calendar className="h-8 w-8 text-purple-600" />
+                <span className="h-8 w-8 text-purple-600 text-2xl">📅</span>
                 <div className="ml-4">
                   <p className="text-sm font-medium text-gray-600">Total Sessions</p>
                   <p className="text-2xl font-bold text-gray-900">{analytics.totalSessions}</p>
@@ -146,7 +145,7 @@ const PractitionerDashboard: React.FC = () => {
 
             <div className="bg-white rounded-lg shadow p-6">
               <div className="flex items-center">
-                <CheckCircle className="h-8 w-8 text-green-600" />
+                <span className="h-8 w-8 text-green-600 text-2xl">✅</span>
                 <div className="ml-4">
                   <p className="text-sm font-medium text-gray-600">Completed</p>
                   <p className="text-2xl font-bold text-gray-900">{analytics.completedSessions}</p>
@@ -156,7 +155,7 @@ const PractitionerDashboard: React.FC = () => {
 
             <div className="bg-white rounded-lg shadow p-6">
               <div className="flex items-center">
-                <TrendingUp className="h-8 w-8 text-emerald-600" />
+                <span className="h-8 w-8 text-emerald-600 text-2xl">📈</span>
                 <div className="ml-4">
                   <p className="text-sm font-medium text-gray-600">Completion Rate</p>
                   <p className="text-2xl font-bold text-gray-900">{analytics.completionRate}%</p>
@@ -166,7 +165,7 @@ const PractitionerDashboard: React.FC = () => {
 
             <div className="bg-white rounded-lg shadow p-6">
               <div className="flex items-center">
-                <Calendar className="h-8 w-8 text-orange-600" />
+                <span className="h-8 w-8 text-orange-600 text-2xl">🗓️</span>
                 <div className="ml-4">
                   <p className="text-sm font-medium text-gray-600">Today's Sessions</p>
                   <p className="text-2xl font-bold text-gray-900">{analytics.todaysSessions}</p>
@@ -227,7 +226,7 @@ const PractitionerDashboard: React.FC = () => {
                 onClick={() => setShowCreateModal(true)}
                 className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-emerald-600 hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500"
               >
-                <Plus className="h-4 w-4 mr-1" />
+                <span className="text-lg mr-1">➕</span>
                 Create New
               </button>
             </div>

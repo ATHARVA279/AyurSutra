@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { X, CheckCircle } from 'lucide-react';
 
 interface Session {
   _id: string;
@@ -73,7 +72,7 @@ const SessionCompletionModal: React.FC<SessionCompletionModalProps> = ({
               onClick={onClose}
               className="text-gray-400 hover:text-gray-600"
             >
-              <X className="h-5 w-5" />
+              <span className="text-xl">✕</span>
             </button>
           </div>
         </div>
@@ -104,7 +103,7 @@ const SessionCompletionModal: React.FC<SessionCompletionModalProps> = ({
                           : 'border-gray-300 hover:border-emerald-500'
                       }`}
                     >
-                      {item.completed && <CheckCircle className="w-3 h-3" />}
+                      {item.completed && <span className="w-3 h-3 text-white">✓</span>}
                     </button>
                     <span className={`text-sm ${item.completed ? 'text-gray-500 line-through' : 'text-gray-700'}`}>
                       {item.item}

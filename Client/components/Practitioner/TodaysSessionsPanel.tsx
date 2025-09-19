@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Calendar, CheckCircle, Clock, User } from 'lucide-react';
 import api from '../../utils/api';
 import { format, parseISO } from 'date-fns';
 import SessionCompletionModal from './SessionCompletionModal';
@@ -88,11 +87,11 @@ const TodaysSessionsPanel: React.FC<TodaysSessionsPanelProps> = ({ onRefresh }) 
   const getStatusIcon = (status: string) => {
     switch (status) {
       case 'completed':
-        return <CheckCircle className="h-4 w-4" />;
+        return <span className="text-green-600">✓</span>;
       case 'scheduled':
-        return <Clock className="h-4 w-4" />;
+        return <span className="text-blue-600">🕐</span>;
       default:
-        return <Clock className="h-4 w-4" />;
+        return <span className="text-blue-600">🕐</span>;
     }
   };
 
@@ -116,7 +115,7 @@ const TodaysSessionsPanel: React.FC<TodaysSessionsPanelProps> = ({ onRefresh }) 
           <div className="flex items-center justify-between">
             <h3 className="text-lg font-medium text-gray-900">Today's Sessions</h3>
             <div className="flex items-center text-sm text-gray-500">
-              <Calendar className="h-4 w-4 mr-1" />
+              <span className="text-gray-400">📅</span>
               {format(new Date(), 'EEEE, MMM d, yyyy')}
             </div>
           </div>
@@ -125,7 +124,7 @@ const TodaysSessionsPanel: React.FC<TodaysSessionsPanelProps> = ({ onRefresh }) 
         <div className="p-6">
           {sessions.length === 0 ? (
             <div className="text-center py-8">
-              <Calendar className="h-12 w-12 text-gray-300 mx-auto mb-4" />
+              <span className="h-12 w-12 text-gray-300 text-4xl block mx-auto mb-4">📅</span>
               <p className="text-gray-500">No sessions scheduled for today.</p>
             </div>
           ) : (
@@ -138,7 +137,7 @@ const TodaysSessionsPanel: React.FC<TodaysSessionsPanelProps> = ({ onRefresh }) 
                   <div className="flex justify-between items-start">
                     <div className="flex-1">
                       <div className="flex items-center space-x-3 mb-2">
-                        <User className="h-4 w-4 text-gray-400" />
+                        <span className="h-4 w-4 text-gray-400">👤</span>
                         <span className="font-medium text-gray-900">
                           {session.patientId.name}
                         </span>

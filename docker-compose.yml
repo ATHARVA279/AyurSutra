@@ -1,0 +1,17 @@
+services:
+  # Backend service
+  backend:
+    build: ./Server
+    ports:
+      - "5000:5000"
+    environment:
+      - NODE_ENV=production
+      - MONGODB_URI=${MONGODB_URI}
+
+  # Frontend service
+  frontend:
+    build: ./Client
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
